@@ -46,7 +46,7 @@ while(length(ls8.ref <- readLines(f, n=1)) > 0) {
     rciop.log("INFO", paste0("Ascending orbit, saving TIRS1 band:", ls8.png))
     
     # ascending direction, get AtSatelliteBrightnessTemperature from TIRS1 
-    bt <- ToAtSatelliteBrightnessTemperature(l, band="tirs1")
+    bt <- ToAtSatelliteBrightnessTemperature(ls8, band="tirs1")
     writeRaster(bt, filename=ls8.tif, format="GTiff", overwrite=TRUE) 
     
     # saving png
