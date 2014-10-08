@@ -45,22 +45,22 @@ while(length(ls8.ref <- readLines(f, n=1)) > 0) {
   if (GetOrbitDirection(ls8) == 'A') {
     rciop.log("INFO", paste0("Ascending orbit, saving TIRS1 band:", ls8.png))
     
-    # ascending direction, execute thermal analysis  
-    raster.image <- ls8$band$tirs1
-    writeRaster(raster.image, filename=ls8.tif, format="GTiff", overwrite=TRUE) 
+    # ascending direction, get AtSatelliteBrightnessTemperature from TIRS1 
+    bt <- ToAtSatelliteBrightnessTemperature(l, band="tirs1")
+    writeRaster(bt, filename=ls8.tif, format="GTiff", overwrite=TRUE) 
     
     # saving png
     png(filename = ls8.png)
-    plot(raster.image, col=grey(rev(seq(0, 1, by = 1/255))))
+    plot(bt, col=grey(rev(seq(0, 1, by = 1/255))))
     dev.off()
 
   } else {
     
     rciop.log("INFO", paste0("Descending orbit, saving RGB image:", ls8.png))
     
-    # descending direction, get RGB picture
+    # descending direction, get RGB from "swir2", "nir", "green" bands
     raster.image <- ToRGB(ls8, "swir2", "nir", "green") 
-    writeRaster(raster.image, filename=ls8.tif, format="GTiff", datatype='INT1U', overwrite=TRUE) 
+    writeRaster(raster.image, filename=ls8.tif, format="GTiff", overwrite=TRUE) 
     
     # saving png
     png(filename = ls8.png)
