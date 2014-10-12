@@ -1,15 +1,12 @@
 #!/usr/bin/Rscript --vanilla --slave --quiet
 
-#.libPaths(c( "/usr/lib64/R/library", "/usr/share/R/library", "/application/packrat/lib/x86_64-redhat-linux-gnu/3.1.0")
+.libPaths("/application/packrat/lib/x86_64-redhat-linux-gnu/3.1.0")
 
 # load rciop library to access the developer cloud sandbox functions
 #library("rciop")
 #library("rgeos")
 #library("stringr")
-#library("rLandsat8")
-
-# load the application package when mvn installed it
-#library(rLandsat8, lib.loc="/application/share/R/library")
+library("rLandsat8")
 
 # get the extent of the area of interest in UTM coordinates, Landsat scenes will be clipped 
 aoi.bbox <- as.numeric(unlist(strsplit(rciop.getparam("extent"), ",")))
