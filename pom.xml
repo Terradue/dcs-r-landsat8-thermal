@@ -112,7 +112,7 @@
 <workingDirectory>/application/share/R</workingDirectory>
 <arguments>
 <argument>-e</argument>
-<argument>packrat::restore()</argument>
+<argument>Sys.setenv(HADOOP_CMD='/usr/bin/hadoop'); packrat::restore()</argument>
 </arguments>
 </configuration>
 </execution>
