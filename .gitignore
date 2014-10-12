@@ -2,3 +2,4 @@ target
 .Rhistory .RData
 .RData
 .Rhistory
+src/main/app-resources/share/R/packrat/lib
