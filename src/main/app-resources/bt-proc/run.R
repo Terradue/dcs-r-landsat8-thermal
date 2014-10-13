@@ -1,11 +1,10 @@
 #!/usr/bin/Rscript --vanilla --slave --quiet
 
-.libPaths("/application/packrat/lib/x86_64-redhat-linux-gnu/3.1.0")
+.libPaths("/application/share/R/packrat/lib/x86_64-redhat-linux-gnu/3.1.0")
 
 # load rciop library to access the developer cloud sandbox functions
-#library("rciop")
-#library("rgeos")
-#library("stringr")
+library("rciop")
+# load package to process Landsat 8 products
 library("rLandsat8")
 
 # get the extent of the area of interest in UTM coordinates, Landsat scenes will be clipped 

@@ -54,9 +54,6 @@
 							<includes>
 								<include>**/*</include>
 							</includes>
-							<excludes>
-      							<exclude>share/**</exclude>
-							</excludes>
 							<followSymlinks>false</followSymlinks>
 						</fileset>
 					</filesets>
@@ -131,8 +128,8 @@
 						<phase>install</phase>
 						<configuration>
 							<target>
-								<chmod dir="/application" includes="**/bin/*, **/run*"
-									perm="755" />
+								<chmod dir="/application" includes="**/bin/*, **/run*" excludes="**/share/*" 
+									perm="755" /> 
 							</target>
 						</configuration>
 						<goals>
