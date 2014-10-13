@@ -1,6 +1,6 @@
 PackratFormat: 1.4
 PackratVersion: 0.4.1.8
-RVersion: 3.1.0
+RVersion: 3.1.1
 Repos: CRAN=http://cran.rstudio.com
 
 Package: RColorBrewer
@@ -29,6 +29,11 @@ Source: CRAN
 Version: 1.0-6
 Hash: cb26464a8321628636b547518994c931
 
+Package: digest
+Source: CRAN
+Version: 0.6.4
+Hash: e4bf0e79b15a352510aff0de905d31e2
+
 Package: hexbin
 Source: CRAN
 Version: 1.27.0
@@ -44,6 +49,12 @@ Source: CRAN
 Version: 0.6-26
 Hash: 2c59a30bb9d9d4651b913b828dca2640
 Requires: RColorBrewer
+
+Package: maptools
+Source: CRAN
+Version: 0.8-30
+Hash: 103c8ad3262b5bc7280d620ed8302328
+Requires: sp
 
 Package: ncdf
 Source: CRAN
@@ -94,12 +105,6 @@ Version: 0.1
 Hash: 136599170905d331c92920ed8ddeef96
 SourcePath: /home/fbrito/Rsource/rciop
 
-Package: rgeos
-Source: CRAN
-Version: 0.3-8
-Hash: ab575b135d32a389ff23c6d364a5bae0
-Requires: sp
-
 Package: rhdfs
 Source: source
 Version: 1.0.8
@@ -116,6 +121,12 @@ Package: sp
 Source: CRAN
 Version: 1.0-15
 Hash: ccab055c2835c81a8add23517d8b6219
+
+Package: testthat
+Source: CRAN
+Version: 0.9.1
+Hash: 8b05e97c7401ae4f8b5dfbaa44cfcf20
+Requires: digest
 
 Package: zoo
 Source: CRAN
